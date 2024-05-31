@@ -1,0 +1,20 @@
+<?php
+echo "<br>";
+echo "Ваша здогадка була ". htmlspecialchars($_GET["guess"]) ;
+echo "<br>";
+
+
+  if ( ! isset($_GET['guess']) ) {
+    echo("Відсутній параметр припущення");
+  } else if ( strlen($_GET['guess']) < 1 ) {
+    echo("Ваше припущення занадто коротке");
+  } else if ( ! is_numeric($_GET['guess']) ) {
+    echo("Ваше припущення не є числом");
+  } else if ( $_GET['guess'] < 42 ) {
+    echo("Ваше припущення занадто низьке");
+  } else if ( $_GET['guess'] > 42 ) {
+    echo("Ваше припущення занадто високе");
+  } ще {
+    echo("Вітаємо - Ви маєте рацію");
+  }
+?>
